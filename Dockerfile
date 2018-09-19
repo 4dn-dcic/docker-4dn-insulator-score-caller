@@ -71,10 +71,11 @@ ENV LANG=C.UTF-8
 
 #Setting the enviroment 
 RUN conda env create -n bootcamp -f environmet.yml 
+RUN source activate bootcamp
 
 # wrapper
 COPY scripts/ .
 RUN chmod +x run*.sh
 
 # default command
-CMD ["run-list.sh"]
+CMD ["ls","/usr/local/bin"]
