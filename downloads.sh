@@ -42,7 +42,7 @@ ln -s pairix-0.3.6 pairix
 ## VERSION: 0.7.6
 ## TYPE: aggregator,normalizer
 ## SOURCE_URL: https://github.com/mirnylab/cooler
-pip3 install cooler==0.7.6
+pip install cooler==0.7.6
 
 
 ## SOFTWARE: pairsqc
