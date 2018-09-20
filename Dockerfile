@@ -51,8 +51,6 @@ RUN apt-get update -y && apt-get install -y gawk \
 
 # download tools
 WORKDIR /usr/local/bin
-COPY downloads.sh .
-RUN . downloads.sh
 
 # set path
 ENV PATH=/usr/local/bin/bwa/:$PATH
