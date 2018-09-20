@@ -17,7 +17,7 @@ RUN apt-get update -y && apt-get install -y \
     liblz4-tool
 
 # installing python3.3 & pip
-RUN apt-get insall -y python3.3
+RUN apt-get install -y python3.3
 
 # installing java (for nozzle) - latest java version
 RUN apt-get update -y && apt-get install -y default-jdk 
