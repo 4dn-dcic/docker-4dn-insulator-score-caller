@@ -42,7 +42,7 @@ ln -s pairix-0.3.6 pairix
 ## VERSION: 0.7.6
 ## TYPE: aggregator,normalizer
 ## SOURCE_URL: https://github.com/mirnylab/cooler
-pip install cooler==0.7.6
+pip3 install cooler==0.7.6
 
 
 ## SOFTWARE: pairsqc
@@ -81,8 +81,8 @@ cd ..
 git clone https://github.com/4dn-dcic/hic2cool.git
 cd hic2cool
 git checkout 0.4.1
-pip install -r requirements.txt
-pip install hic2cool==0.4.1
+pip3 install -r requirements.txt
+pip3 install hic2cool==0.4.1
 cd ..
 
 ## SOFTWARE: mcool2hic
@@ -99,10 +99,10 @@ cd ..
 ## COMMIT: eccd21
 ## TYPE: file format converter,sorter,annotater,filter
 ## SOURCE_URL: https://github.com/mirnylab/pairsamtools
-pip install numpy Cython click
+pip3 install numpy Cython click
 conda config --add channels conda-forge
 conda config --add channels bioconda
 conda install -y pbgzip
 conda install -y coreutils
-pip install git+https://github.com/mirnylab/pairsamtools.git@eccd21
+pip3 install git+https://github.com/mirnylab/pairsamtools.git@eccd21
 
