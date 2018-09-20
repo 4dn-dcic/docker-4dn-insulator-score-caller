@@ -73,8 +73,9 @@ ENV LANG=C.UTF-8
 COPY scripts/ .
 RUN chmod +x run*.sh
 
-#Setting the enviroment 
-RUN conda create -n bootcamp -f environmet.yml 
+#Setting the enviroment
+COPY environment.yml . 
+RUN conda env create -n bootcamp -f environmet.yml 
 RUN source activate bootcamp
 
 # default command
