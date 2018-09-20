@@ -45,6 +45,10 @@ ENV PATH=/miniconda2/bin:$PATH
 RUN conda update -y conda \
     && rm Miniconda2-latest-Linux-x86_64.sh
 
+#Setting the enviroment 
+RUN conda env create -n bootcamp -f environmet.yml 
+RUN source activate bootcamp
+
 # installing gawk for juicer
 RUN apt-get update -y && apt-get install -y gawk \
     && echo 'alias awk=gawk' >> ~/.bashrc
@@ -66,10 +70,6 @@ ENV PATH=/usr/local/bin/FastQC/:$PATH
 # supporting UTF-8
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
-
-#Setting the enviroment 
-RUN user/package/conda env create -n bootcamp -f environmet.yml 
-RUN source activate bootcamp
 
 # wrapper
 COPY scripts/ .
