@@ -75,7 +75,7 @@ RUN chmod +x run*.sh
 
 #Setting the enviroment
 COPY environment.yml . 
-RUN conda env create -n bootcamp -f environmet.yml 
+RUN conda env update -n root --file environment.yml 
 RUN source activate bootcamp
 
 # default command
