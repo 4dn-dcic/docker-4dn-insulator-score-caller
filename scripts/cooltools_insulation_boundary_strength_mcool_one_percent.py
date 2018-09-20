@@ -32,11 +32,11 @@ for res in cooler_list:
 
     # Diamond insulation score
     insul = find_insulating_boundaries(c,balance='weight',window_bp=window_bp,min_dist_bad_bin=2)
-    insul.to_csv(f'/usr/local/bin/one_percent.{binsize//1000}kb.window_{window_bp//1000}kb.insul.tsv', sep='\t')
+    insul.to_csv(f'/usr/local/bin/result_files/one_percent.{binsize//1000}kb.window_{window_bp//1000}kb.insul.tsv', sep='\t')
     bioframe.to_bigwig(insul, chromsizes,
-                           f'/usr/local/bin/one_percent.{binsize//1000}kb.window_{window_bp//1000}kb.insul_score.bw',
+                           f'/usr/local/bin/result_files/one_percent.{binsize//1000}kb.window_{window_bp//1000}kb.insul_score.bw',
                            f'log2_insulation_score_{window_bp}')
 
     bioframe.to_bigwig(insul, chromsizes,
-                           f'/usr/local/bin/one_percent.{binsize//1000}kb.window_{window_bp//1000}kb.insul_pp.bw',
+                           f'/usr/local/bin/result_files/one_percent.{binsize//1000}kb.window_{window_bp//1000}kb.insul_pp.bw',
                            f'boundary_strength_{window_bp}')
