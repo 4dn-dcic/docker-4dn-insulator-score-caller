@@ -68,7 +68,7 @@ ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
 
 #Setting the enviroment 
-RUN conda env create -n bootcamp -f environmet.yml 
+RUN user/package/conda env create -n bootcamp -f environmet.yml 
 RUN source activate bootcamp
 
 # wrapper
