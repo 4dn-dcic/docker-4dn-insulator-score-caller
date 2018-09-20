@@ -45,16 +45,14 @@ ENV PATH=/miniconda2/bin:$PATH
 RUN conda update -y conda \
     && rm Miniconda2-latest-Linux-x86_64.sh
 
-#Setting the enviroment 
-RUN conda create -n bootcamp -f environmet.yml 
-RUN source activate bootcamp
-
 # installing gawk for juicer
 RUN apt-get update -y && apt-get install -y gawk \
     && echo 'alias awk=gawk' >> ~/.bashrc
 
 # download tools
 WORKDIR /usr/local/bin
+COPY downloads.sh .
+RUN . downloads.sh
 
 # set path
 ENV PATH=/usr/local/bin/bwa/:$PATH
@@ -74,6 +72,10 @@ ENV LANG=C.UTF-8
 # wrapper
 COPY scripts/ .
 RUN chmod +x run*.sh
+
+#Setting the enviroment 
+RUN conda create -n bootcamp -f environmet.yml 
+RUN source activate bootcamp
 
 # default command
 CMD ["ls","/usr/local/bin"]
