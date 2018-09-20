@@ -46,7 +46,7 @@ RUN conda update -y conda \
     && rm Miniconda2-latest-Linux-x86_64.sh
 
 #Setting the enviroment 
-RUN conda env create -n bootcamp -f environmet.yml 
+RUN conda create -n bootcamp -f environmet.yml 
 RUN source activate bootcamp
 
 # installing gawk for juicer
