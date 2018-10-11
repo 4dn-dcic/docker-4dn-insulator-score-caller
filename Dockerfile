@@ -17,7 +17,7 @@ RUN apt-get update -y && apt-get install -y \
     liblz4-tool
 
 # installing python3.3 & pip
-RUN apt-get install -y python3.3
+#RUN apt-get install -y python3.3
 
 # installing java (for nozzle) - latest java version
 RUN apt-get update -y && apt-get install -y default-jdk 
@@ -36,10 +36,14 @@ RUN R -e 'library(devtools); install_url("https://github.com/SooLee/plotosaurus/
 RUN R -e 'install.packages("stringr", repos="http://cran.us.r-project.org" )'
 
 # installing conda
-RUN wget https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh && bash Miniconda2-latest-Linux-x86_64.sh -p /miniconda2 -b
-ENV PATH=/miniconda2/bin:$PATH
+RUN wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh && bash Miniconda3-latest-Linux-x86_64.sh -p /miniconda3 -b
+ENV PATH=/miniconda3/bin:$PATH
 RUN conda update -y conda \
-    && rm Miniconda2-latest-Linux-x86_64.sh
+    && rm Miniconda3-latest-Linux-x86_64.sh
+    
+#Setting the enviroment
+COPY environment.yml . 
+RUN conda env update -n root --file environment.yml
 
 # installing gawk for juicer
 RUN apt-get update -y && apt-get install -y gawk \
@@ -68,11 +72,6 @@ ENV LANG=C.UTF-8
 # wrapper
 COPY scripts/ .
 RUN chmod +x run*.sh
-
-#Setting the enviroment
-COPY environment.yml . 
-RUN conda env update -n root --file environment.yml 
-RUN source activate bootcamp
 
 # default command
 CMD ["ls","/usr/local/bin"]
