@@ -1,6 +1,17 @@
-#!/bin/bash
+#!usr/bin/bash                                                                  
 
-mkdir /usr/local/bin/result_files/
+INPUT=$1
+OUTDIR=$2
 
-python /cooltools_insulation_boundary_strength_mcool_one_percent.py 
+FILE_BASE=$(basename $INPUT)
+FILE_NAME=${FILE_BASE%%.*}
+
+echo $FILE_NAME
+
+if [ ! -d "$OUTDIR" ]
+then
+    mkdir $OUTDIR
+fi
+
+python Script_modified.py $INPUT $OUTDIR $FILE_NAME
 
