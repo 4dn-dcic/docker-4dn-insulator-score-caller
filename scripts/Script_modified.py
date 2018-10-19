@@ -36,7 +36,7 @@ def main(mcoolfile,outdir,filename,window,cutoff ):
 
  insul = find_insulating_boundaries(c,balance='weight',window_bp=window_bp,min_dist_bad_bin=2)
  bioframe.to_bigwig(insul, chromsizes,
-                       f'./{outdir}/{filename}.bw',
+                       f'/{outdir}/{filename}.bw',
                        f'log2_insulation_score_{window_bp}')
 
 if __name__ == "__main__":
