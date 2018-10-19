@@ -1,4 +1,4 @@
-#!usr/bin/bash                                                                  
+#!/bin/bash                                                                  
 
 INPUT=$1
 OUTDIR=$2
