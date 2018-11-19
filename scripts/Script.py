@@ -59,7 +59,7 @@ def main(mcoolfile,outdir,filename,window,cutoff,binsize):
 
  #Convert to BigWig
  bioframe.to_bigwig(insul, chromsizes,
-                       f'./{outdir}/{filename}.bw',
+                       f'/{outdir}/{filename}.bw',
                        f'log2_insulation_score_{window}')
 
 if __name__ == "__main__":
