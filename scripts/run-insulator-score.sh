@@ -6,12 +6,10 @@ OUTDIR=$2
 FILE_BASE=$(basename $INPUT)
 FILE_NAME=${FILE_BASE%%.*}
 
-echo $FILE_NAME
-
 if [ ! -d "$OUTDIR" ]
 then
     mkdir $OUTDIR
 fi
 
-python Script_modified.py $INPUT $OUTDIR $FILE_NAME
+python Script.py $INPUT $OUTDIR $FILE_NAME
 
