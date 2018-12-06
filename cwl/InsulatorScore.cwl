@@ -27,4 +27,4 @@ outputs:
     outputBinding:
       glob: "$(inputs.outdir + '/' + '*.bw')"
       
-baseCommand: ["run-insulator.sh"]
+baseCommand: ["run-insulator-score.sh"]
