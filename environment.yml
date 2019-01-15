@@ -33,7 +33,7 @@ dependencies:
     - pairix
     - pip:
         - git+https://github.com/mirnylab/pairsamtools
-        - git+https://github.com/mirnylab/cooltools
+        - git+https://github.com/mirnylab/cooltools/tree/441a84ab6c1efd3bcd29de6cfd6ee78551873478
         - git+https://github.com/nvictus/pybbi.git
         - git+https://github.com/nvictus/lavaburst.git
         - bioframe
