@@ -17,12 +17,12 @@ import click
 @click.command()
 @click.argument('mcoolfile')
 @click.argument('outdir')
-#@click.argument('filename')
+@click.argument('filename')
 @click.option('--window', default=100000, help='')
 @click.option('--cutoff', default=2, help='')
 @click.option('--binsize', default=-1, help='')
 
-def main(mcoolfile,outdir,window,cutoff,binsize):
+def main(mcoolfile,outdir,filename,window,cutoff,binsize):
     f = mcoolfile
 
     #Get the list of resolutions in the mcool file
@@ -74,7 +74,7 @@ def main(mcoolfile,outdir,window,cutoff,binsize):
 
     #Convert to BigWig
     bioframe.to_bigwig(insul, chromsizes,
-                       f'/{outdir}/output2.bw',
+                       f'/{outdir}/{filename}.bw',
                        f'log2_insulation_score_{window}')
 
 
