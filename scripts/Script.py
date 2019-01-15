@@ -17,51 +17,68 @@ import click
 @click.command()
 @click.argument('mcoolfile')
 @click.argument('outdir')
-@click.argument('filename')
+#@click.argument('filename')
 @click.option('--window', default=100000, help='')
 @click.option('--cutoff', default=2, help='')
 @click.option('--binsize', default=-1, help='')
 
-def main(mcoolfile,outdir,filename,window,cutoff,binsize):
- f=mcoolfile
+def main(mcoolfile,outdir,window,cutoff,binsize):
+    f = mcoolfile
 
- #Get list of resolutions in the mcool file:
- cooler_list=cooler.io.ls(f)
- list_lenght = len(cooler_list)
- res_list = [1] * list_lenght
- x = 0
+    #Get the list of resolutions in the mcool file
+    cooler_list = cooler.io.ls(f)
+    old_version= False
 
- for res in cooler_list:
-    res_list[x] = int(res.split('/')[-1])
-    x = x + 1
+    if not any([res for res in cooler_list if '/resolutions/' in res]): #gets the resolutions from a file in a older version of cooler
+        old_version = True
+        binsize_list = []
+        for res in cooler_list:
+            cooler_path = str(f)+'::'+ res
+            c = cooler.Cooler(cooler_path)
+            binsize_list.append(int(c.binsize))
+    else:
+        binsize_list = []
+        for res in cooler_list:
+            binsize_list.append(int(res.split('/')[-1]))
 
- #Test input parameters:
- if binsize == -1:
-    binsize = min(res_list)
+    # Check the input parameters
+    if binsize == -1:
+        binsize = min(binsize_list)
+    else:
+        if binsize in binsize_list:
+            if window % binsize != 0:
+                print("Error: Window size must be multiple of binsize")
+                sys.exit()
+        else:
+            print("Error: This binsize is not available in this mcool file. This is the list of binsizes availables:")
+            print(binsize_list)
+            sys.exit()
 
- if binsize in res_list:
-    if window % binsize != 0:
-        print("Error: window size must be a multiple of binsize ")
-        sys.exit()
- else:
-    print( "Error: The binsize is not available in this mcool file. This is the list of binsizes:")
-    print(res_list)
-    sys.exit()
+    # Creates a cooler object
+    if old_version:
+        res_list = []
+        for res in cooler_list:
+            res_list.append(int(res.split('/')[-1]))
+            res_index = max(res_list)
 
- #Getting cooler file in a convinient interface
- cooler_path=str(f)+'::'+ cooler_list[res_list.index(binsize)]
- c=cooler.Cooler(cooler_path)
- print(c)
- chromsizes=pd.Series(c.chroms()[:]['length'].values, index=c.chroms()[:]['name'].values)
+        cooler_path = str(f) + '::' + str(res_index)
+    else:
+        cooler_path = str(f) + '::' + cooler_list[binsize_list.index(binsize)]
+    c = cooler.Cooler(cooler_path)
+    print(c)
 
- #Getting insulating boundaries
- insul = find_insulating_boundaries(c,balance='weight',window_bp=window,min_dist_bad_bin=2)
+    # Gets the chromsizes
+    chromsizes=pd.Series(c.chroms()[:]['length'].values, index=c.chroms()[:]['name'].values)
+    #Getting insulating boundaries
+    insul = find_insulating_boundaries(c,balance='weight',window_bp=window,min_dist_bad_bin=2)
 
- #Convert to BigWig
- bioframe.to_bigwig(insul, chromsizes,
-                       f'/{outdir}/{filename}.bw',
+    #Convert to BigWig
+    bioframe.to_bigwig(insul, chromsizes,
+                       f'/{outdir}/output2.bw',
                        f'log2_insulation_score_{window}')
+
 
 if __name__ == "__main__":
     main()
+
 
