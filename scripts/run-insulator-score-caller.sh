@@ -11,5 +11,5 @@ then
     mkdir $OUTDIR
 fi
 
-python Script.py $INPUT $OUTDIR $FILE_NAME
+python /usr/local/bin/Script.py $INPUT $OUTDIR $FILE_NAME
 
