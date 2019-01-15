@@ -29,11 +29,6 @@ RUN pip install click
 COPY environment.yml . 
 RUN conda env update -n root --file environment.yml
 
-# download tools
-WORKDIR /usr/local/bin
-COPY downloads.sh .
-RUN . downloads.sh
-
 # set path
 ENV PATH=/usr/local/bin/scripts:$PATH
 
