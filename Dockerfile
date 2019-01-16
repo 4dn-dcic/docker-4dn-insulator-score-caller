@@ -39,7 +39,7 @@ RUN conda update -y conda \
     && rm Miniconda3-latest-Linux-x86_64.sh
     
 # installing click
-RUN pip install click
+RUN pip install cooltools==0.1
     
 #Setting the enviroment
 COPY environment.yml . 
