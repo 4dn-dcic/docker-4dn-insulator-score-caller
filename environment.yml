@@ -40,4 +40,3 @@ dependencies:
         - multiprocess
         - awscli
         - s3fs
-        - cooltools==0.1
