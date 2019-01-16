@@ -38,12 +38,10 @@ ENV PATH=/miniconda3/bin:$PATH
 RUN conda update -y conda \
     && rm Miniconda3-latest-Linux-x86_64.sh
     
-# installing click
-RUN pip install click
-    
 #Setting the enviroment
 COPY environment.yml . 
 RUN conda env update -n root --file environment.yml
+RUN source activate root
 
 # installing gawk for juicer
 RUN apt-get update -y && apt-get install -y gawk \
