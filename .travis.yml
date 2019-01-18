@@ -6,7 +6,7 @@ services:
   - docker
  
 env:
-  - LOCAL_NAME=docker-4dn-bedgraphtobigwig REMOTE_NAME=4dndcic/4dn-bedgraphtobigwig
+  - LOCAL_NAME=docker-4dn-insulator-score-caller REMOTE_NAME=4dndcic/4dn-insulator-score-caller
 
 install:
   - docker build -t $LOCAL_NAME .
@@ -21,7 +21,7 @@ before_script:
     fi;
 
 script:
-  - source tests/tests_cwl.sh bedGraphToBigWig
+  - source tests/tests_cwl.sh insulator-score-caller
 
 after_success:
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
