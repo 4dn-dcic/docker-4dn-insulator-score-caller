@@ -1,17 +1,5 @@
 #!/bin/sh
 
-## SOFTWARE: bwa
-## VERSION: 0.7.17
-## TYPE: aligner
-## SOURCE_URL: https://github.com/lh3/bwa
-wget https://github.com/lh3/bwa/archive/v0.7.17.tar.gz
-tar -xzf v0.7.17.tar.gz
-cd bwa-0.7.17
-make
-cd ..
-ln -s bwa-0.7.17 bwa
-
-
 ## SOFTWARE: samtools
 ## VERSION: 1.2
 ## TYPE: file format converter
