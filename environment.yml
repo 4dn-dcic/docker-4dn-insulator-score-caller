@@ -24,7 +24,6 @@ dependencies:
     - biopython
     - pyfaidx
     - pysam
-    - pairix
     - pip:
         - git+https://github.com/mirnylab/pairsamtools
         - git+https://github.com/mirnylab/cooltools
