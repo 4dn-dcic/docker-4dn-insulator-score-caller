@@ -5,6 +5,11 @@ channels:
 dependencies:
     - cython
     - numpy
+    - matplotlib
+    - seaborn
+    - bokeh
+    - pandas
+    - h5py
     - pip:
         - git+https://github.com/mirnylab/cooltools
         - git+https://github.com/nvictus/pybbi.git
