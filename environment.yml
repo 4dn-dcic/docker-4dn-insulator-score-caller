@@ -3,9 +3,6 @@ channels:
     - defaults
     - bioconda
 dependencies:
-    - numpy
-    - scipy
-    - cython
     - matplotlib
     - seaborn
     - bokeh
@@ -25,7 +22,6 @@ dependencies:
     - pyfaidx
     - pysam
     - pip:
-        - git+https://github.com/mirnylab/pairsamtools
         - git+https://github.com/mirnylab/cooltools
         - git+https://github.com/nvictus/pybbi.git
         - git+https://github.com/nvictus/lavaburst.git
