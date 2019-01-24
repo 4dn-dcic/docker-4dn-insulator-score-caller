@@ -3,6 +3,7 @@ channels:
     - defaults
     - bioconda
 dependencies:
+    -cython
     - pip:
         - git+https://github.com/mirnylab/cooltools
         - git+https://github.com/nvictus/pybbi.git
