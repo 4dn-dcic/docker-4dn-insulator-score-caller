@@ -29,26 +29,6 @@ tar -xzf 0.2.3.tar.gz
 rm 0.2.3.tar.gz
 ln -s pairsqc-0.2.3 pairsqc
 
-
-## SOFTWARE: juicer_tools
-## VERSION: 1.8.9-cuda8
-## TYPE: aggregator,normalizer
-## SOURCE_URL: https://github.com/theaidenlab/juicebox
-wget http://hicfiles.tc4ga.com.s3.amazonaws.com/public/juicer/juicer_tools.1.8.9_jcuda.0.8.jar
-ln -s /usr/local/bin/juicer_tools.1.8.9_jcuda.0.8.jar juicer_tools.jar
-
-
-## SOFTWARE: juicer
-## COMMIT: e6d60097e589878bdf277fba6d88075430041273
-## TYPE: aligner,file format converter,sorter,annotater,filter,aggregator,normalizer
-## SOURCE_URL: https://github.com/theaidenlab/juicer
-git clone https://github.com/SooLee/juicer.git
-cd juicer
-chmod +x CPU/* CPU/common/*
-ln -s CPU scripts
-cd ..
-
-
 ## SOFTWARE: hic2cool
 ## VERSION: 0.4.1
 ## TYPE: file format converter
