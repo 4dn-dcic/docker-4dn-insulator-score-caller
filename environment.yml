@@ -4,6 +4,7 @@ channels:
     - bioconda
 dependencies:
     - cython
+    - numpy
     - pip:
         - git+https://github.com/mirnylab/cooltools
         - git+https://github.com/nvictus/pybbi.git
