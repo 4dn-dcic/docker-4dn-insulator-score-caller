@@ -10,6 +10,7 @@ dependencies:
     - bokeh
     - pandas
     - h5py
+    - numba
     - pip:
         - git+https://github.com/mirnylab/cooltools
         - git+https://github.com/nvictus/pybbi.git
