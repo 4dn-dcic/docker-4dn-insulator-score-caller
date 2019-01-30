@@ -13,6 +13,8 @@ RUN apt-get update -y && apt-get install -y \
     unzip \
     vim \
     wget \
+    hdf5-helpers \
+    libhdf5-7 \
     zlib1g-dev \
     liblz4-tool
 
