@@ -1,5 +1,5 @@
 {
-   "bgfile": {
+   "mcoolfile": {
        "class": "File",
        "path": "../test_files/test.multires.cool"
    }
