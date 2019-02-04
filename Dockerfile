@@ -16,7 +16,7 @@ RUN apt-get update -y && apt-get install -y \
     zlib1g-dev \
     liblz4-tool \
     libcurl4-openssl-dev \
-    libssl-dev \
+    libssl-dev 
 
 # installing conda
 RUN wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh && bash Miniconda3-latest-Linux-x86_64.sh -p /miniconda3 -b
