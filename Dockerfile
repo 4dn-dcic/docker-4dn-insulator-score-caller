@@ -30,6 +30,10 @@ RUN conda env update -n root --file environment.yml
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
 
+#Setting working directory & path
+WORKDIR /usr/local/bin
+ENV PATH=/usr/local/bin/scripts:$PATH
+
 # wrapper
 COPY scripts/ .
 RUN chmod +x run*.sh
