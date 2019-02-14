@@ -39,7 +39,7 @@ dependencies:
         - git+https://github.com/nvictus/lavaburst.git
         - git+https://github.com/nvictus/pybbi@e8a6ea750860ceb9f125f2366393cb0c11b1f1fc
         - bioframe==0.0.7
-        - cooler==0.7.6
+        - cooler==0.8.3
         - multiprocess==0.70.6.1
         - awscli==1.16.31
         - s3fs==0.1.6
