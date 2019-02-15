@@ -19,9 +19,10 @@ before_script:
     else
        docker tag $LOCAL_NAME $REMOTE_NAME:$TRAVIS_BRANCH;
     fi;
+  - chmod +x tests/tests_cwl.sh
 
 script:
-  - source tests/tests_cwl.sh insulator-score-caller
+  - tests/tests_cwl.sh insulator-score-caller
 
 after_success:
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
