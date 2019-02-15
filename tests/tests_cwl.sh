@@ -1,3 +1,4 @@
+set -eE
 CWL_NAME=$1
 CWL_FILENAME=$1.cwl
 INPUT_JSON_NAME=$1.input.json
