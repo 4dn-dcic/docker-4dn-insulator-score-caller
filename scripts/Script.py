@@ -69,6 +69,7 @@ def main(mcoolfile,outdir,filename,window,cutoff,binsize):
 
     # Gets the chromsizes
     chromsizes=pd.Series(c.chroms()[:]['length'].values, index=c.chroms()[:]['name'].values)
+    
     #Getting insulating boundaries
     insul = find_insulating_boundaries(c,balance='weight',window_bp=window,min_dist_bad_bin=2)
 
