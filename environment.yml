@@ -35,7 +35,7 @@ dependencies:
     - coreutils
     - pip:
         - git+https://github.com/mirnylab/pairsamtools
-        - git+https://github.com/mirnylab/cooltools
+        - git+https://github.com/mirnylab/cooltools/tree/reduce_mem
         - git+https://github.com/nvictus/lavaburst.git
         - git+https://github.com/nvictus/pybbi@e8a6ea750860ceb9f125f2366393cb0c11b1f1fc
         - bioframe==0.0.7
