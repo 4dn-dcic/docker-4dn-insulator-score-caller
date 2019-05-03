@@ -6,7 +6,7 @@ cwlVersion: v1.0
 
 requirements:
 - class: DockerRequirement
-  dockerPull: "4dndcic/4dn-insulator-score-caller:v6.5_mem"
+  dockerPull: "4dndcic/4dn-insulator-score-caller:v6.6"
 
 - class: "InlineJavascriptRequirement"
 
