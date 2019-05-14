@@ -15,4 +15,4 @@ then
     mkdir $OUTDIR
 fi
 
-python /usr/local/bin/Script.py $INPUT $OUTDIR $FILE_NAME $BINSIZE $WINDOWSIZE $CUTOFF
+python /usr/local/bin/Script.py $INPUT $OUTDIR $FILE_NAME --binsize $BINSIZE --window $WINDOWSIZE --cutoff $CUTOFF
