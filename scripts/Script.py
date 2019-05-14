@@ -18,9 +18,10 @@ import click
 @click.argument('mcoolfile')
 @click.argument('outdir')
 @click.argument('filename')
+@click.option('--binsize', default=-1, help='')
 @click.option('--window', default=100000, help='')
 @click.option('--cutoff', default=2, help='')
-@click.option('--binsize', default=-1, help='')
+
 
 def main(mcoolfile,outdir,filename,window,cutoff,binsize):
     f = mcoolfile
@@ -69,7 +70,7 @@ def main(mcoolfile,outdir,filename,window,cutoff,binsize):
 
     # Gets the chromsizes
     chromsizes=pd.Series(c.chroms()[:]['length'].values, index=c.chroms()[:]['name'].values)
-    
+
     #Getting insulating boundaries
     insul = find_insulating_boundaries(c,balance='weight',window_bp=window,min_dist_bad_bin=2)
 
@@ -81,5 +82,3 @@ def main(mcoolfile,outdir,filename,window,cutoff,binsize):
 
 if __name__ == "__main__":
     main()
-
-

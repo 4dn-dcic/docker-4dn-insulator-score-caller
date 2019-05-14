@@ -2,5 +2,8 @@
    "mcoolfile": {
        "class": "File",
        "path": "../test_files/test.multires.cool"
-   }
+   },
+   "binsize": -1,
+   "windowsize": 100000,
+   "cutoff": 2
 }

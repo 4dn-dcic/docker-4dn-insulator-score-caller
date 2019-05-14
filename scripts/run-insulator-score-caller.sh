@@ -1,7 +1,11 @@
-#!/bin/bash                                                                  
+#!/bin/bash
 
 INPUT=$1
 OUTDIR=$2
+BINSIZE=$3
+WINDOWSIZE=$4
+CUTOFF=$5
+
 
 FILE_BASE=$(basename $INPUT)
 FILE_NAME=${FILE_BASE%%.*}
@@ -11,5 +15,4 @@ then
     mkdir $OUTDIR
 fi
 
-python /usr/local/bin/Script.py $INPUT $OUTDIR $FILE_NAME
-
+python /usr/local/bin/Script.py $INPUT $OUTDIR $FILE_NAME $BINSIZE $WINDOWSIZE $CUTOFF
