@@ -70,7 +70,7 @@ and outputs them in bigwig format.
 #### Usage
 Runs the following in the container
 ```
-run-insulator-score-caller <mcool file> <binsize> <windowsize> <cutoff> <outdir>
+run-insulator-score-caller.sh <mcool file> <binsize> <windowsize> <cutoff> <outdir>
 # mcool file: input mcool
 # binsize: the size of the bins
 # windowsize: the size of the sliding diamond window
