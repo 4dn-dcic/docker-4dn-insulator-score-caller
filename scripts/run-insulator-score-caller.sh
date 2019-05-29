@@ -15,4 +15,4 @@ then
     mkdir $OUTDIR
 fi
 
-python /usr/local/bin/Script.py  --binsize $BINSIZE --window $WINDOWSIZE --cutoff $CUTOFF $INPUT $OUTDIR $FILE_NAME
+python /usr/local/bin/get_insulation_scores.py  --binsize $BINSIZE --window $WINDOWSIZE --cutoff $CUTOFF $INPUT $OUTDIR $FILE_NAME
