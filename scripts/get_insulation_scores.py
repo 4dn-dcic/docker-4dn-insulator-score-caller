@@ -72,7 +72,7 @@ def main(mcoolfile,outdir,filename,window,cutoff,binsize):
     chromsizes=pd.Series(c.chroms()[:]['length'].values, index=c.chroms()[:]['name'].values)
 
     #Getting insulating boundaries
-    insul = find_insulating_boundaries(c,balance='weight',window_bp=window,min_dist_bad_bin=2)
+    insul = find_insulating_boundaries(c,balance='weight',window_bp=window,min_dist_bad_bin=cutoff)
 
     #Convert to BigWig
     bioframe.to_bigwig(insul, chromsizes,
