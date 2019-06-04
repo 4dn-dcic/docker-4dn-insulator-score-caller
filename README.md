@@ -62,7 +62,7 @@ docker run -v /data1/:/d1/:rw -v /data2/:/d2/:rw 4dndcic/4dn-insulator-score-cal
 ```
 
 ### run-insulator-score-caller.sh
-This calls the 'Script.py' file which gets the diamond insulation scores from mcool files produced by Hi-C data
+This calls the 'get_insulation_scores.py' file which gets the diamond insulation scores from mcool files produced by Hi-C data
 and outputs them in bigwig format.
 * Input: a mcool file
 * Output: a bigwig file
